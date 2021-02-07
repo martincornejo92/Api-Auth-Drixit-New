@@ -116,16 +116,14 @@ server.use(/^(?!\/auth).*$/,  (req, res, next) => {
   }
 })
 
-server.get('/auth/user', (email) => {
-  fs.readFile.findIndex("./users.json", (email, data) => {  
-    if (err) {
-      const status = 401
-      const message = err
-      res.status(status).json({status, message})
-      return
-    };
-    return data;
-})
+server.post('/auth/user', (req,res) => {
+  const {email} = req.body;
+if(isAuthenticated({email}) === true) {
+  const status = 401;
+  const message = 'Email and Password already exist';
+  res.status(status).json({status, message});
+  return
+}
 })
 
 server.use(router)
