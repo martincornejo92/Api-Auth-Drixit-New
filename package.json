@@ -1,13 +1,13 @@
 {
   "name": "json-server-api",
   "version": "1.0.0",
-  "description": "Simple Fake API",
+  "description": "Simple API Drixit",
   "main": "main.js",
   "scripts": {
     "start": "json-server --watch ./database.json",
     "start-auth": "node server.js"
   },
-  "author": "ME:)",
+  "author": "Martin",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
